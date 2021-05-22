@@ -1,16 +1,15 @@
 package paquete;
 
 public class Electrodomestico {
-    private  double valConsumo;
     private  double valImportado;
-    private String opcConsumo;
     private String opcImportado;
     private double totalBase;
 
-    public Electrodomestico(String opcConsumo, String opcImportado, Consumo consumo) {
-        this.opcConsumo = opcConsumo;
+    public Electrodomestico( String opcImportado, Consumo consumo) {
         this.opcImportado = opcImportado;
+        this.valImportado = transformarAValorProcedencia();
         this.totalBase = consumo.getConsumo()+ getValImportado();
+
     }
 
     public double getTotalBase() {
@@ -42,12 +41,14 @@ public class Electrodomestico {
         }
 
         public double getConsumo() { return consumo; }
+
+
     }
 
-    public void transformarAValorProcedencia(){
+    public double transformarAValorProcedencia(){
         // tenario creado
-        double result = (getOpcImportado().equals("Nacional") ) ? 250000 : 350000;
-        setValImportado(result);
+        double result = (getOpcImportado().equals("Nacional") ) ? 250_000 : 350_000;
+        return result;
         /*switch (getOpcImportado()){
             case "Nacional":
                 setValImportado(250000);
@@ -58,7 +59,8 @@ public class Electrodomestico {
         }*/
     }
 
-    public  double calcularPrecioBase(Consumo consumo){
-        return consumo.getConsumo()+ getValImportado();
+    public  double calcularPrecioBase(){
+        System.out.println(getTotalBase());
+        return getTotalBase();
     }
 }

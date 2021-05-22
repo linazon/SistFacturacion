@@ -1,11 +1,11 @@
 package paquete;
 
-/*public class Nevera extends Electrodomestico{
+public class Nevera extends Electrodomestico{
     private double valorCapacidad;
     private double porcCapacidad;
 
-    public Nevera(String opcConsumo, String opcImportado, double valorCapacidad){
-        super(opcConsumo, opcImportado);
+    public Nevera( String opcImportado, Consumo consumo,double valorCapacidad){
+        super(opcImportado, consumo);
         this.valorCapacidad = valorCapacidad;
     }
 
@@ -25,12 +25,12 @@ package paquete;
         this.valorCapacidad = valorCapacidad;
     }
 
-    //@Override
-    /*public  double calcularPrecioBase(double valorCapacidad){
-        return (getValConsumo()+ getValImportado())+ getValorCapacidad();
-    }*/
+    @Override
+    public  double calcularPrecioBase(){
+        return getTotalBase()+getValorCapacidad();
+    }
 
-   /* public void calcularporcCapacidad(){
+    public void calcularporcCapacidad(){
         if (getValorCapacidad()>120) {
             setPorcCapacidad((((getValorCapacidad() - 120) * 5) / 1000));
         } else{
@@ -39,8 +39,8 @@ package paquete;
     }
     public void calcularCapacidad(){
             calcularporcCapacidad();
-          // setValorCapacidad(calcularPrecioBase()*getPorcCapacidad());
+          setValorCapacidad(getTotalBase()*getPorcCapacidad());
         }
 
-    }*/
+    }
 

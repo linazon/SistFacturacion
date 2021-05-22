@@ -4,16 +4,16 @@ package paquete;
 public class Main {
 
     public static void main(String[] args) {
-                    Electrodomestico electrodomestico = new Electrodomestico("A","Nacional", Electrodomestico.Consumo.A);
-                    electrodomestico.transformarAValorProcedencia();
+                    Electrodomestico electrodomestico = new Electrodomestico("Importado", Electrodomestico.Consumo.B);
+                    //electrodomestico.transformarAValorProcedencia();
 
-                    System.out.println(electrodomestico.getTotalBase());
+                    System.out.println("electrodomestico "+electrodomestico.calcularPrecioBase());
 
-                    //Nevera nevera = new Nevera("C","Importado",100);
+                    Nevera nevera = new Nevera("Importado", Electrodomestico.Consumo.A,250);
                     //nevera.transformarAValorConsumo();
-                   // nevera.transformarAValorProcedencia();
-                  //  nevera.calcularCapacidad();
-                   // System.out.println(nevera.calcularPrecioBase(nevera.getValorCapacidad()));
+                    nevera.transformarAValorProcedencia();
+                    nevera.calcularCapacidad();
+                    System.out.println(nevera.calcularPrecioBase());
 
                     //Televisor televisor = new Televisor("A","Nacional",10,false);
                     //televisor.transformarAValorConsumo();
