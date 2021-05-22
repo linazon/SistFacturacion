@@ -26,9 +26,9 @@ public class Nevera extends Electrodomestico{
     }
 
     //@Override
-    public  double calcularPrecioBase(double valorCapacidad){
+    /*public  double calcularPrecioBase(double valorCapacidad){
         return (getValConsumo()+ getValImportado())+ getValorCapacidad();
-    }
+    }*/
 
     public void calcularporcCapacidad(){
         if (getValorCapacidad()>120) {
@@ -39,7 +39,7 @@ public class Nevera extends Electrodomestico{
     }
     public void calcularCapacidad(){
             calcularporcCapacidad();
-           setValorCapacidad(calcularPrecioBase()*getPorcCapacidad());
+          // setValorCapacidad(calcularPrecioBase()*getPorcCapacidad());
         }
 
     }

@@ -28,7 +28,7 @@ private boolean sintonizador;
 
     public  double adicionarPulgadas(){
         if(getTamaño()>40){
-           return calcularPrecioBase()*0.3;//3000000
+          // return calcularPrecioBase()*0.3;//3000000
         }
         return 0;
     }
@@ -40,7 +40,7 @@ private boolean sintonizador;
         return 0;
     }
 
-    public  double calcularPrecioBase(double tamaño, double sintetizador){
+    /*public  double calcularPrecioBase(double tamaño, double sintetizador){
         return getValConsumo()+ getValImportado() +adicionarPulgadas()+adicionarSintetizdor();
-    }
+    }*/
 }
