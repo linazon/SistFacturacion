@@ -1,11 +1,11 @@
 package paquete;
 
-/*public class Televisor extends  Electrodomestico{
+public class Televisor extends  Electrodomestico{
 private double tamaño;
 private boolean sintonizador;
 
-    public Televisor(String opcConsumo, String opcImportado, double tamaño, boolean sintonizador){
-        //super(opcConsumo, opcImportado);
+    public Televisor(String opcImportado, Consumo consumo, double tamaño, boolean sintonizador){
+        super(opcImportado, consumo);
         this.tamaño = tamaño;
         this.sintonizador = sintonizador;
     }
@@ -28,19 +28,20 @@ private boolean sintonizador;
 
     public  double adicionarPulgadas(){
         if(getTamaño()>40){
-          // return calcularPrecioBase()*0.3;//3000000
+           return getTotalBase()*0.3;
         }
         return 0;
     }
 
     public double adicionarSintetizdor(){
         if(isSintonizador()){
-           return 250000;//2500000
+           return 250000;
         }
         return 0;
     }
 
-    public  double calcularPrecioBase(double tamaño, double sintetizador){
-        return getValConsumo()+ getValImportado() +adicionarPulgadas()+adicionarSintetizdor();
+@Override
+    public  double calcularPrecioBase(){
+        return getTotalBase() +adicionarPulgadas()+adicionarSintetizdor();
     }
-}*/
+}
