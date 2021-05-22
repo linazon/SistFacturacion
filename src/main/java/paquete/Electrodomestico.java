@@ -11,13 +11,6 @@ public class Electrodomestico {
         this.opcImportado = opcImportado;
     }
 
-    public Electrodomestico(double valConsumo, double valImportado) {
-        this.valConsumo = valConsumo;
-        this.valImportado = valImportado;
-    }
-
-    public Electrodomestico(){}
-
     public String getOpcConsumo() {
         return opcConsumo;
     }
@@ -56,14 +49,16 @@ public class Electrodomestico {
         }
     }
     public void transformarAValorProcedencia(){
-        switch (getOpcImportado()){
+        double result = (getOpcImportado().equals("Nacional") ) ? 250000 : 350000;
+        setValImportado(result);
+        /*switch (getOpcImportado()){
             case "Nacional":
                 setValImportado(250000);
                 break;
             case "Importado":
                 setValImportado(350000);
             break;
-        }
+        }*/
     }
 
     public  double calcularPrecioBase(){
