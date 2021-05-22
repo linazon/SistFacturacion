@@ -7,6 +7,7 @@ public class Nevera extends Electrodomestico{
     public Nevera( String opcImportado, Consumo consumo,double valorCapacidad){
         super(opcImportado, consumo);
         this.valorCapacidad = valorCapacidad;
+
     }
 
     public double getPorcCapacidad() {
@@ -25,11 +26,6 @@ public class Nevera extends Electrodomestico{
         this.valorCapacidad = valorCapacidad;
     }
 
-    @Override
-    public  double calcularPrecioBase(){
-        return getTotalBase()+getValorCapacidad();
-    }
-
     public void calcularporcCapacidad(){
         if (getValorCapacidad()>120) {
             setPorcCapacidad((((getValorCapacidad() - 120) * 5) / 1000));
@@ -37,10 +33,19 @@ public class Nevera extends Electrodomestico{
             setPorcCapacidad(0);
         }
     }
-    public void calcularCapacidad(){
-            calcularporcCapacidad();
-          setValorCapacidad(getTotalBase()*getPorcCapacidad());
-        }
+
+    public double calcularCapacidad(){
+        calcularporcCapacidad();
+        setValorCapacidad(getTotalBase()*getPorcCapacidad());
+        return getValorCapacidad();
+    }
+    @Override
+    public  double calcularPrecioBase(){
+        return getTotalBase()+calcularCapacidad();
+    }
+
+
+
 
     }
 
