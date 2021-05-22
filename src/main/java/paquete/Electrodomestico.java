@@ -7,6 +7,12 @@ public class Electrodomestico {
     private String opcImportado;
     private double totalBase;
 
+    public Electrodomestico(String opcConsumo, String opcImportado, Consumo consumo) {
+        this.opcConsumo = opcConsumo;
+        this.opcImportado = opcImportado;
+        this.totalBase = consumo.getConsumo()+ getValImportado();
+    }
+
     public double getTotalBase() {
         return totalBase;
     }
@@ -15,26 +21,8 @@ public class Electrodomestico {
         this.totalBase = totalBase;
     }
 
-    public Electrodomestico(String opcConsumo, String opcImportado, Consumo consumo) {
-        this.opcConsumo = opcConsumo;
-        this.opcImportado = opcImportado;
-        this.totalBase = consumo.getConsumo()+ getValImportado();
-    }
-
-    public String getOpcConsumo() {
-        return opcConsumo;
-    }
-
     public String getOpcImportado() {
         return opcImportado;
-    }
-
-    public double getValConsumo() {
-        return valConsumo;
-    }
-
-    public void setValConsumo(double valConsumo) {
-        this.valConsumo = valConsumo;
     }
 
     public double getValImportado() {
@@ -53,24 +41,9 @@ public class Electrodomestico {
             this.consumo = consumo;
         }
 
-        public double getConsumo() {
-            return consumo;
-        }
+        public double getConsumo() { return consumo; }
     }
-    /*public void transformarAValorConsumo(){
 
-                switch (getOpcConsumo()){
-            case "A":
-                setValConsumo(450000);
-                break;
-            case "B":
-                setValConsumo(350000);
-                break;
-            case "C":
-                setValConsumo(250000);
-                break;
-        }
-    }*/
     public void transformarAValorProcedencia(){
         // tenario creado
         double result = (getOpcImportado().equals("Nacional") ) ? 250000 : 350000;
