@@ -1,6 +1,6 @@
 package paquete;
 
-public class Nevera extends Electrodomestico{
+/*public class Nevera extends Electrodomestico{
     private double valorCapacidad;
     private double porcCapacidad;
 
@@ -30,7 +30,7 @@ public class Nevera extends Electrodomestico{
         return (getValConsumo()+ getValImportado())+ getValorCapacidad();
     }*/
 
-    public void calcularporcCapacidad(){
+   /* public void calcularporcCapacidad(){
         if (getValorCapacidad()>120) {
             setPorcCapacidad((((getValorCapacidad() - 120) * 5) / 1000));
         } else{
@@ -42,5 +42,5 @@ public class Nevera extends Electrodomestico{
           // setValorCapacidad(calcularPrecioBase()*getPorcCapacidad());
         }
 
-    }
+    }*/
 
